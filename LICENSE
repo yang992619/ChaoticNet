@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 ChaoticNet (混沌之眼) Team
+
+代码部分以 MIT 许可发布；随仓库发布的数据（data/ 下的仿真轨迹与结果汇总表，以及
+data/tracking_windows/ 中 29 段真实轨迹的分析窗）、加工图与实验装置 BOM 以
+Creative Commons Attribution 4.0 International (CC BY 4.0) 许可发布。
+未随仓库分发的逐帧完整追踪结果（29 段约 75 MB）与原始录像（约 13 GB）适用同一许可，
+可向作者索取；由原始录像重建逐帧结果的完整命令见 tracking/reproduce_29.sh。
+（The source code is released under the MIT License below; the data shipped with this
+repository — including the 29 analysis-window trajectories under data/tracking_windows/ —
+the fabrication drawings, and the apparatus BOM are released under CC BY 4.0. The full
+per-frame tracking output (~75 MB) and the raw footage (~13 GB) are not distributed with
+the repository but are available from the authors under the same licence; see
+tracking/reproduce_29.sh to rebuild the per-frame output from the raw footage.）
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" width="1100" height="760" font-family="'Helvetica Neue', 'Songti SC', sans-serif">
+  <!--
+    ChaoticNet 双摆装置 零件图 P04 - 主轴座
+    将 ⌀5 轴销固定到 2020 铝型材横梁，悬臂支撑摆臂 1 的主轴承。
+    比例：前视 4:1 / 侧视 4:1 / 孔位详图 8:1
+    单位：mm  |  GB/T 1804-m 一般公差
+  -->
+
+  <defs>
+    <marker id="da4" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#111"/>
+    </marker>
+    <!-- 2020 横梁剖面 pattern -->
+    <pattern id="alupat4" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#cfd6dc"/>
+      <path d="M 0 6 L 6 0" stroke="#9aa5af" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1060" height="720" fill="none" stroke="#222" stroke-width="1.6"/>
+  <rect x="20" y="20" width="1060" height="40" fill="#f0f0f0" stroke="#222" stroke-width="1.6"/>
+  <text x="40" y="48" font-size="20" font-weight="bold" fill="#111">P04 · 主轴座（Pivot Bearing Bracket）</text>
+  <text x="900" y="44" font-size="11" text-anchor="end" fill="#444">单位 mm · 比例 4:1 · GB/T 1804-m</text>
+  <text x="900" y="56" font-size="11" text-anchor="end" fill="#444">ChaoticNet / 双摆混沌项目</text>
+
+  <!-- ============================ 前视图 ============================ -->
+  <text x="230" y="100" font-size="14" font-weight="bold" fill="#111">前视图  Front View（4:1）</text>
+  <line x1="40" y1="108" x2="450" y2="108" stroke="#999" stroke-width="0.6"/>
+
+  <!-- 板尺寸 70 × 40 × 5（评审 3 号建议：60→70，M5 间距 30→40 抗弯矩 +33%）；4:1 显示 → 280 × 160 px
+       位置 x 110..390, y 145..305
+  -->
+  <rect x="110" y="145" width="280" height="160" rx="20" ry="20" fill="#e8eaec" stroke="#111" stroke-width="2"/>
+
+  <!-- 两个 M5 安装孔（间距 40mm = 160 px，对称于中心 x=250）-->
+  <!-- 左孔：⌀5.5 通孔，显示 4:1 → r=11 px -->
+  <circle cx="170" cy="185" r="11" fill="#fff" stroke="#111" stroke-width="1.6"/>
+  <circle cx="170" cy="185" r="2" fill="#111"/>
+  <line x1="150" y1="185" x2="190" y2="185" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="170" y1="165" x2="170" y2="205" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <text x="164" y="155" font-size="12" font-weight="bold" fill="#c0392b">M1</text>
+
+  <!-- 右孔 -->
+  <circle cx="330" cy="185" r="11" fill="#fff" stroke="#111" stroke-width="1.6"/>
+  <circle cx="330" cy="185" r="2" fill="#111"/>
+  <line x1="310" y1="185" x2="350" y2="185" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="330" y1="165" x2="330" y2="205" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <text x="324" y="155" font-size="12" font-weight="bold" fill="#c0392b">M2</text>
+
+  <!-- 中心轴孔 ⌀5 H7（位置 35mm 从顶 = 140 px 从顶 = y=285） -->
+  <circle cx="250" cy="285" r="10" fill="#fff" stroke="#111" stroke-width="2"/>
+  <circle cx="250" cy="285" r="2" fill="#111"/>
+  <line x1="220" y1="285" x2="280" y2="285" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="250" y1="255" x2="250" y2="320" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <text x="246" y="335" font-size="13" font-weight="bold" fill="#c0392b">S（轴孔）</text>
+
+  <!-- ============================ 尺寸标注 ============================ -->
+  <!-- 总宽 70 mm -->
+  <line x1="110" y1="355" x2="390" y2="355" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="110" y1="305" x2="110" y2="365" stroke="#111" stroke-width="0.6"/>
+  <line x1="390" y1="305" x2="390" y2="365" stroke="#111" stroke-width="0.6"/>
+  <text x="250" y="350" font-size="15" font-weight="bold" text-anchor="middle" fill="#111">70 ±0.2</text>
+
+  <!-- 总高 40 mm -->
+  <line x1="75" y1="145" x2="75" y2="305" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="65" y1="145" x2="110" y2="145" stroke="#111" stroke-width="0.6"/>
+  <line x1="65" y1="305" x2="110" y2="305" stroke="#111" stroke-width="0.6"/>
+  <text x="60" y="230" font-size="14" font-weight="bold" text-anchor="end" fill="#111">40 ±0.2</text>
+
+  <!-- M5 间距 40 mm（评审 3 号建议：抗弯矩 +33%） -->
+  <line x1="170" y1="130" x2="330" y2="130" stroke="#111" stroke-width="1.2" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="170" y1="130" x2="170" y2="165" stroke="#111" stroke-width="0.6"/>
+  <line x1="330" y1="130" x2="330" y2="165" stroke="#111" stroke-width="0.6"/>
+  <text x="250" y="125" font-size="14" font-weight="bold" text-anchor="middle" fill="#111">40 ±0.2</text>
+
+  <!-- M5 孔距顶边 10 mm -->
+  <line x1="45" y1="145" x2="45" y2="185" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="40" y1="145" x2="170" y2="145" stroke="#111" stroke-width="0.6"/>
+  <line x1="40" y1="185" x2="170" y2="185" stroke="#111" stroke-width="0.6"/>
+  <text x="35" y="170" font-size="12" font-weight="bold" text-anchor="end" fill="#111">10</text>
+
+  <!-- 轴孔距顶 35 mm（关键尺寸） -->
+  <line x1="425" y1="145" x2="425" y2="285" stroke="#c0392b" stroke-width="1.4" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="390" y1="145" x2="430" y2="145" stroke="#c0392b" stroke-width="0.6"/>
+  <line x1="280" y1="285" x2="430" y2="285" stroke="#c0392b" stroke-width="0.6"/>
+  <text x="438" y="220" font-size="14" font-weight="bold" fill="#c0392b">35 ±0.1</text>
+  <text x="438" y="237" font-size="10" font-style="italic" fill="#c0392b">轴心距顶（关键）</text>
+
+  <!-- ============================ 侧视图 ============================ -->
+  <text x="540" y="100" font-size="14" font-weight="bold" fill="#111">侧视图  Side View（4:1）</text>
+  <line x1="490" y1="108" x2="745" y2="108" stroke="#999" stroke-width="0.6"/>
+
+  <!-- 厚度 5mm × 4 = 20 px 宽，板高 40mm × 4 = 160 px -->
+  <rect x="540" y="145" width="20" height="160" fill="#e8eaec" stroke="#111" stroke-width="2"/>
+
+  <!-- 轴销（⌀5 × 15mm，v2: 25→15）从板上 35mm 高度水平伸出 -->
+  <!-- 轴销在前视图 y=285，侧视图同高 -->
+  <rect x="540" y="282" width="60" height="6" fill="#a8a8a8" stroke="#222" stroke-width="1"/>
+
+  <!-- 轴承 MR105ZZ 套在销上（4mm 宽，紧贴 P04 外侧 0.5mm 间隙） -->
+  <rect x="562" y="270" width="16" height="30" fill="#444" stroke="#000" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- E 型挡圈（紧跟轴承后，0.5mm 间隙） -->
+  <rect x="580" y="278" width="3" height="14" fill="#888" stroke="#444" stroke-width="0.6"/>
+
+  <!-- 组件数字标号（画在元件上） -->
+  <circle cx="595" cy="263" r="7" fill="#fff" stroke="#c0392b" stroke-width="1"/>
+  <text x="595" y="267" font-size="10" font-weight="bold" text-anchor="middle" fill="#c0392b">1</text>
+  <circle cx="570" cy="313" r="7" fill="#fff" stroke="#c0392b" stroke-width="1"/>
+  <text x="570" y="317" font-size="10" font-weight="bold" text-anchor="middle" fill="#c0392b">2</text>
+  <circle cx="582" cy="313" r="7" fill="#fff" stroke="#c0392b" stroke-width="1"/>
+  <text x="582" y="317" font-size="10" font-weight="bold" text-anchor="middle" fill="#c0392b">3</text>
+
+  <!-- 组件说明（右侧垂直清单，无重叠） -->
+  <text x="650" y="225" font-size="11" font-weight="bold" fill="#111">组件说明</text>
+  <text x="650" y="243" font-size="10" fill="#222">① ⌀5 轴销 P06（L=15）</text>
+  <text x="650" y="257" font-size="10" fill="#444">　压入 5 + 外伸 10</text>
+  <text x="650" y="278" font-size="10" fill="#222">② MR105ZZ 轴承</text>
+  <text x="650" y="292" font-size="10" fill="#444">　压入 P01 ⌀10 H7 孔</text>
+  <text x="650" y="313" font-size="10" fill="#222">③ E5 挡圈（GB/T 896 规格 5）</text>
+
+  <!-- 厚度尺寸 -->
+  <line x1="540" y1="395" x2="560" y2="395" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <line x1="540" y1="305" x2="540" y2="405" stroke="#111" stroke-width="0.6"/>
+  <line x1="560" y1="305" x2="560" y2="405" stroke="#111" stroke-width="0.6"/>
+  <text x="550" y="412" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">5 ±0.1</text>
+  <text x="550" y="425" font-size="10" text-anchor="middle" fill="#666">（厚度）</text>
+
+  <!-- 2020 横梁示意（侧视图上方） -->
+  <rect x="500" y="125" width="40" height="40" fill="url(#alupat4)" stroke="#333" stroke-width="1.2"/>
+  <text x="465" y="150" font-size="10" fill="#444">2020</text>
+  <text x="465" y="162" font-size="10" fill="#444">横梁</text>
+
+  <!-- 横梁内的 M5 T 形螺母 + 螺栓 -->
+  <rect x="510" y="155" width="20" height="8" fill="#666"/>
+  <line x1="520" y1="155" x2="520" y2="175" stroke="#222" stroke-width="2"/>
+  <text x="500" y="180" font-size="9" fill="#444">T 螺母</text>
+  <text x="500" y="192" font-size="9" fill="#444">+ M5×10</text>
+
+  <!-- ============================ 轴孔详图 ============================ -->
+  <text x="290" y="450" font-size="14" font-weight="bold" fill="#111">轴孔 S 详图  Shaft Hole Detail（8:1）</text>
+  <line x1="40" y1="458" x2="450" y2="458" stroke="#999" stroke-width="0.6"/>
+
+  <!-- ⌀5 × 8 = 40 px 半径 -->
+  <circle cx="200" cy="555" r="40" fill="#fff" stroke="#111" stroke-width="2.2"/>
+  <circle cx="200" cy="555" r="3" fill="#111"/>
+  <line x1="140" y1="555" x2="260" y2="555" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="8,3,2,3"/>
+  <line x1="200" y1="495" x2="200" y2="615" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="8,3,2,3"/>
+  <line x1="160" y1="555" x2="240" y2="555" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <text x="200" y="635" font-size="14" font-weight="bold" text-anchor="middle" fill="#111">⌀5 H7（+0.012 / 0）</text>
+  <text x="200" y="652" font-size="11" text-anchor="middle" fill="#666">⌀5 圆柱销过盈压入（m6 配合，GB/T 119.1）</text>
+  <text x="200" y="666" font-size="11" text-anchor="middle" fill="#666">两端 C0.5 倒角，孔深 = 板厚 5mm</text>
+
+  <!-- M5 通孔详图 -->
+  <text x="500" y="450" font-size="14" font-weight="bold" fill="#111">M5 安装孔详图（8:1）</text>
+  <circle cx="600" cy="555" r="44" fill="#fff" stroke="#111" stroke-width="2.2"/>
+  <circle cx="600" cy="555" r="3" fill="#111"/>
+  <line x1="540" y1="555" x2="660" y2="555" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="8,3,2,3"/>
+  <line x1="600" y1="495" x2="600" y2="615" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="8,3,2,3"/>
+  <line x1="556" y1="555" x2="644" y2="555" stroke="#111" stroke-width="1" marker-start="url(#da4)" marker-end="url(#da4)"/>
+  <text x="600" y="635" font-size="14" font-weight="bold" text-anchor="middle" fill="#111">⌀5.5（M5 过孔）</text>
+  <text x="600" y="652" font-size="11" text-anchor="middle" fill="#666">M5×10 内六角螺栓穿过</text>
+  <text x="600" y="666" font-size="11" text-anchor="middle" fill="#666">+ 2020 T 形螺母锁紧</text>
+
+  <!-- ============================ 技术要求 + 标题块（右侧，整体再右移 40px） ============================ -->
+  <rect x="790" y="100" width="270" height="290" fill="#fff" stroke="#666" stroke-width="1.2" rx="3"/>
+  <rect x="790" y="100" width="270" height="26" fill="#dfe5ea" stroke="#666" stroke-width="1.2"/>
+  <text x="804" y="119" font-size="13" font-weight="bold" fill="#111">技术要求  Technical Req.</text>
+
+  <text x="804" y="148" font-size="12" font-weight="bold" fill="#222">① 材料</text>
+  <text x="820" y="166" font-size="11" fill="#333">6061-T6 铝合金板，t=5</text>
+  <text x="820" y="180" font-size="11" fill="#333">（可与 P01/P02 同家下料）</text>
+
+  <text x="804" y="204" font-size="12" font-weight="bold" fill="#222">② 加工方式</text>
+  <text x="820" y="222" font-size="11" fill="#333">外形 + M5 过孔：激光切割</text>
+  <text x="820" y="236" font-size="11" fill="#333">⌀5 H7 轴孔：钻 + 绞刀</text>
+  <text x="820" y="250" font-size="11" fill="#333">（激光精度不够，必须二次绞）</text>
+
+  <text x="804" y="276" font-size="12" font-weight="bold" fill="#222">③ 表面</text>
+  <text x="820" y="294" font-size="11" fill="#333">两面 240# 砂磨 + C0.5 倒角</text>
+  <text x="820" y="308" font-size="11" fill="#333">外圆角 R5（含在外形里）</text>
+
+  <text x="804" y="332" font-size="12" font-weight="bold" fill="#222">④ 关键尺寸</text>
+  <text x="820" y="350" font-size="11" fill="#333">轴孔距顶 35±0.1（关键）</text>
+  <text x="820" y="364" font-size="11" fill="#333">轴孔 ⌀5 H7（配 m6 销过盈）</text>
+  <text x="820" y="378" font-size="11" fill="#333">M5 间距 40±0.2（配 T 槽）</text>
+
+  <rect x="790" y="410" width="270" height="210" fill="#fafafa" stroke="#222" stroke-width="1.4"/>
+  <line x1="790" y1="440" x2="1060" y2="440" stroke="#222" stroke-width="1"/>
+  <line x1="790" y1="475" x2="1060" y2="475" stroke="#222" stroke-width="0.8"/>
+  <line x1="790" y1="510" x2="1060" y2="510" stroke="#222" stroke-width="0.8"/>
+  <line x1="790" y1="545" x2="1060" y2="545" stroke="#222" stroke-width="0.8"/>
+  <line x1="790" y1="580" x2="1060" y2="580" stroke="#222" stroke-width="0.8"/>
+  <line x1="920" y1="440" x2="920" y2="620" stroke="#222" stroke-width="0.8"/>
+
+  <text x="804" y="432" font-size="13" font-weight="bold" fill="#111">标题块  Title Block</text>
+
+  <text x="804" y="462" font-size="11" fill="#666">零件号</text>
+  <text x="930" y="462" font-size="12" font-weight="bold" fill="#111">P04</text>
+  <text x="804" y="497" font-size="11" fill="#666">名称</text>
+  <text x="930" y="497" font-size="12" font-weight="bold" fill="#111">主轴座</text>
+  <text x="804" y="532" font-size="11" fill="#666">数量</text>
+  <text x="930" y="532" font-size="12" font-weight="bold" fill="#111">1</text>
+  <text x="804" y="567" font-size="11" fill="#666">材料</text>
+  <text x="930" y="567" font-size="11" fill="#111">6061-T6 / t=5</text>
+  <text x="804" y="602" font-size="11" fill="#666">DXF</text>
+  <text x="930" y="602" font-size="10" fill="#111">P04_pivot_bracket.dxf</text>
+
+  <rect x="40" y="690" width="1020" height="60" fill="#fff8e6" stroke="#d9a441" stroke-width="1.2" rx="4"/>
+  <text x="55" y="708" font-size="11" font-weight="bold" fill="#7a5b15">⚠️ 给加工厂的备注</text>
+  <text x="55" y="725" font-size="10" fill="#5a4216">· 轴孔 ⌀5 H7 必须二次绞孔加工，激光精度（约 ±0.05）做不到 H7（±0.012）→ 配 m6 销才有过盈，松了摆臂会晃</text>
+  <text x="55" y="741" font-size="10" fill="#5a4216">· M5 间距 40±0.2 配 2020 T 槽螺母；偏 ±1mm 还能塞 T 螺母滑动调整，偏 ±3mm 装不上</text>
+</svg>

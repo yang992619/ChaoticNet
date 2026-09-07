@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 35 760 660" width="760" height="660" font-family="'Times New Roman', 'Songti SC', serif">
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2933"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C43C2F"/>
+    </marker>
+    <marker id="arrow-red-start" viewBox="0 0 10 10" refX="1.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#C43C2F"/>
+    </marker>
+  </defs>
+
+  <rect x="100" y="35" width="760" height="660" fill="white"/>
+
+  <!-- fixed support and upper pivot -->
+  <line x1="365" y1="92" x2="635" y2="92" stroke="#111827" stroke-width="5"/>
+  <g stroke="#111827" stroke-width="2">
+    <line x1="382" y1="92" x2="362" y2="68"/><line x1="415" y1="92" x2="395" y2="68"/>
+    <line x1="448" y1="92" x2="428" y2="68"/><line x1="481" y1="92" x2="461" y2="68"/>
+    <line x1="514" y1="92" x2="494" y2="68"/><line x1="547" y1="92" x2="527" y2="68"/>
+    <line x1="580" y1="92" x2="560" y2="68"/><line x1="613" y1="92" x2="593" y2="68"/>
+  </g>
+  <circle cx="500" cy="92" r="13" fill="white" stroke="#111827" stroke-width="4"/>
+  <text x="474" y="69" font-size="27" font-style="italic" fill="#111827">O</text>
+
+  <!-- vertical reference lines -->
+  <line x1="500" y1="105" x2="500" y2="380" stroke="#8A939B" stroke-width="2" stroke-dasharray="11,9"/>
+  <line x1="670" y1="390" x2="670" y2="618" stroke="#8A939B" stroke-width="2" stroke-dasharray="11,9"/>
+
+  <!-- distributed-mass rods -->
+  <line x1="500" y1="92" x2="670" y2="390" stroke="#344454" stroke-width="18" stroke-linecap="round"/>
+  <line x1="670" y1="390" x2="442" y2="584" stroke="#344454" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="670" cy="390" r="13" fill="white" stroke="#111827" stroke-width="4"/>
+  <circle cx="442" cy="584" r="13" fill="white" stroke="#111827" stroke-width="4"/>
+  <text x="697" y="378" font-size="26" font-weight="bold" fill="#111827">Joint A</text>
+
+  <!-- centre of mass 1 -->
+  <circle cx="580" cy="232" r="16" fill="white" stroke="#C43C2F" stroke-width="4"/>
+  <path d="M 568 232 H592 M580 220 V244" stroke="#C43C2F" stroke-width="3"/>
+  <line x1="492" y1="109" x2="567" y2="220" stroke="#C43C2F" stroke-width="2" marker-start="url(#arrow-red-start)" marker-end="url(#arrow-red)"/>
+  <text x="447" y="178" font-size="25" font-style="italic" fill="#C43C2F">L</text>
+  <text x="461" y="184" font-size="16" fill="#C43C2F">c1</text>
+  <text x="605" y="227" font-size="29" font-style="italic" fill="#C43C2F">M</text>
+  <text x="626" y="234" font-size="18" fill="#C43C2F">1</text>
+
+  <!-- centre of mass 2 -->
+  <circle cx="558" cy="485" r="16" fill="white" stroke="#C43C2F" stroke-width="4"/>
+  <path d="M 546 485 H570 M558 473 V497" stroke="#C43C2F" stroke-width="3"/>
+  <line x1="658" y1="399" x2="570" y2="474" stroke="#C43C2F" stroke-width="2" marker-start="url(#arrow-red-start)" marker-end="url(#arrow-red)"/>
+  <text x="694" y="428" font-size="25" font-style="italic" fill="#C43C2F">L</text>
+  <text x="708" y="434" font-size="16" fill="#C43C2F">c2</text>
+  <text x="581" y="520" font-size="29" font-style="italic" fill="#C43C2F">M</text>
+  <text x="602" y="527" font-size="18" fill="#C43C2F">2</text>
+
+  <!-- geometric lengths -->
+  <text x="617" y="276" font-size="31" font-style="italic" fill="#111827">L</text>
+  <text x="639" y="284" font-size="20" fill="#111827">1</text>
+  <text x="483" y="500" font-size="31" font-style="italic" fill="#111827">L</text>
+  <text x="505" y="508" font-size="20" fill="#111827">2</text>
+
+  <!-- angular coordinates -->
+  <path d="M500 194 A102 102 0 0 1 550 180" fill="none" stroke="#C43C2F" stroke-width="4"/>
+  <text x="534" y="171" font-size="31" font-style="italic" fill="#C43C2F">θ</text>
+  <text x="556" y="178" font-size="19" fill="#C43C2F">1</text>
+  <path d="M670 496 A106 106 0 0 0 594 465" fill="none" stroke="#C43C2F" stroke-width="4"/>
+  <text x="605" y="448" font-size="31" font-style="italic" fill="#C43C2F">θ</text>
+  <text x="627" y="455" font-size="19" fill="#C43C2F">2</text>
+
+  <!-- gravity and minimal legend -->
+  <line x1="185" y1="190" x2="185" y2="282" stroke="#111827" stroke-width="4"/>
+  <path d="M169 277 L185 307 L201 277 z" fill="#111827"/>
+  <text x="150" y="255" font-size="34" font-style="italic" fill="#111827">g</text>
+  <line x1="260" y1="652" x2="306" y2="652" stroke="#344454" stroke-width="12" stroke-linecap="round"/>
+  <text x="322" y="660" font-size="22" fill="#344454">rigid rod</text>
+  <circle cx="500" cy="652" r="11" fill="white" stroke="#C43C2F" stroke-width="3"/>
+  <path d="M492 652 H508 M500 644 V660" stroke="#C43C2F" stroke-width="2.5"/>
+  <text x="520" y="660" font-size="22" fill="#C43C2F">CoM</text>
+</svg>

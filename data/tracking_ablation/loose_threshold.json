@@ -1,0 +1,48 @@
+{
+  "video": "IMG_1448.MOV",
+  "frames": 13153,
+  "fps": 59.975,
+  "resolution": "1920x1080",
+  "window": [
+    0,
+    13153
+  ],
+  "hsv_params": {
+    "blue_vmin": 40,
+    "blue_smin": 55,
+    "gate_xmax": 1780
+  },
+  "link_px": 788.2,
+  "blue_candidates_per_frame": {
+    "median": 46.0,
+    "max": 67,
+    "frames_with_multiple": 13153
+  },
+  "variants": {
+    "rigid_plus_temporal": {
+      "lam": 1.0,
+      "pivot_px": [
+        994.1,
+        -556.2
+      ],
+      "L1_px": 828.3,
+      "circle_fit_rms_px": 43.15,
+      "inliers": "11951/13153",
+      "resolved_frames": 13153
+    },
+    "rigid_only": {
+      "lam": 0.0,
+      "pivot_px": [
+        1044.3,
+        402.8
+      ],
+      "L1_px": 462.4,
+      "circle_fit_rms_px": 133.14,
+      "inliers": "12925/13153",
+      "resolved_frames": 13153
+    }
+  },
+  "m1_selection_diff_frames": 9123,
+  "m1_selection_diff_ratio": 0.69361,
+  "tol_px": 5.0
+}

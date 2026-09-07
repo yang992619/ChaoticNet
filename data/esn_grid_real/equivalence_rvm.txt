@@ -1,0 +1,9 @@
+真实侧 ESN 融合路径等价性 + 自证门槛（tools/esn_grid_real.py）
+口径：u0 = U[i0-1]（训练切片外的下一帧，未被消费过），闭环用 rc/esn.py 原生 predict。
+绝不套用仿真侧 predict_readout_first 修正——真实侧本来就是正确族。
+
+G1 融合路径 vs rvm.run_esn 逐位等价：θ1 maxdiff=0.000e+00 θ2 maxdiff=0.000e+00  [PASS]
+G2 canonical-real+lead4+seed42 逐片复现 summary_multi.csv 的 ESN_h：29 片最大差=4.510e-04 (<1e-3)，中位=0.1501s  [PASS]
+G3 lead=   4s 对照组：PINN=0.4168(期望0.417) Hybrid=0.4835(期望0.484)  [PASS]
+G3 lead=  16s 对照组：PINN=0.8837(期望0.884) Hybrid=1.0004(期望1.0)  [PASS]
+G3 lead=  32s 对照组：PINN=1.2839(期望1.284) Hybrid=1.2672(期望1.267)  [PASS]

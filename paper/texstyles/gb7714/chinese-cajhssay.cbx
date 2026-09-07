@@ -1,0 +1,347 @@
+%%
+%% ---------------------------------------------------------------
+%% erj.cbx --- A citation style of comprehensive academic journal of humanities and social sciences in china
+%% modified from gb7714-2015ay
+%% Maintained by huzhenzhen
+%% E-mail: hzzmail@163.com
+%% Released under the LaTeX Project Public License v1.3c or later
+%% ---------------------------------------------------------------
+%%
+%%用法：类似于标准的样式在biblatex加载时设置样式
+%%文献表正常处理，标注命令主要用cite和textcite
+
+\ProvidesFile{chinese-cajhssay.cbx}[v1.0a a biblatex citation style for ERJ]
+
+%==================================================
+%加载gb样式
+%==================================================
+\RequireCitationStyle{gb7714-2015ay} %
+
+
+%
+%   增加一个控制标注中标点是英文还是中文的选项
+%   20220222,v1.0a,hzz
+\DeclareBibliographyOption{gbcitepunctcn}[true]{%biblatex低版本
+  \ifstrequal{#1}{false}{\exegbpunctencite}{}}
+
+\def\gbpunctcommacite{，}%
+\def\gbpunctmarkcite{、}%
+\def\gbpunctsemicoloncite{；}%
+\def\gbpunctparenlcite{（}%
+\def\gbpunctparenrcite{）}
+\def\gbpunctcoloncite{：}%
+
+\def\exegbpunctencite{%
+\def\gbpunctcommacite{\addcomma\addspace}%
+\def\gbpunctmarkcite{\addcomma\addspace}%
+\def\gbpunctsemicoloncite{\addsemicolon\addspace}%
+\def\gbpunctcoloncite{\addcolon\addspace}%
+\def\gbpunctparenlcite{(}%
+\def\gbpunctparenrcite{)}
+}
+
+%==================================================
+%选项设置
+%==================================================
+\ExecuteBibliographyOptions{
+    maxcitenames=2,
+    mincitenames=1,
+    %gbcitepunctcn=true,
+}
+
+\DeclareDelimFormat[textcite]{delimandincitecn}{和}%\addcomma\space
+\DeclareDelimFormat[parencite,cite]{delimandincitecn}{\gbpunctmarkcite}%\addcomma\space
+\DeclareDelimFormat[textcite]{delimandincite}{和}%\addcomma\space
+\DeclareDelimFormat[parencite,cite]{delimandincite}{ \& }%\addcomma\space
+\DeclareDelimFormat[textcite]{delimandothersincite}{\str@andotherscn}%\addcomma\space
+\DeclareDelimFormat[parencitem,cite]{delimandothersincite}{et al\adddot}%\addcomma\space
+
+\DefineBibliographyStrings{english}{
+    andincitecn = {\printdelim{delimandincitecn}},
+    andincite   = {\printdelim{delimandincite}},
+    %andothersincitecn={\str@andotherscn},
+    %andothersincite={\printdelim{delimandothersincite}},
+}
+
+%==================================================
+%引用命令设置，主要用cite和textcite
+%包括标点设置
+%==================================================
+\renewcommand*{\multicitedelim}{\gbpunctsemicoloncite}%\addsemicolon\addspace；
+\renewcommand*{\textcitedelim}{%
+  \iffinalcitedelim
+    {\ifnumgreater{\value{textcitetotal}}{2}
+       {}{}%\iftextcitepunct{\finalandsemicolon}{\finalandcomma}
+     \addspace\gbpunctmarkcite}%\addspace\bibstring{andincitecn}
+    {\iftextcitepunct{\addsemicolon\space}{\addspace\gbpunctmarkcite}}%\addcomma
+}
+
+%注意在renewbibmacro*{cite}里面使用了compcitedelim,compextradelim
+%但其实在cite命令里面若在sepcode里面指定了multicitedelim，则这两个间隔符有时是多余的
+%在这个样式中我们直接将其定义为空了，然后再cite命令中设置了multicitedelim
+\renewcommand*{\compcitedelim}{}
+
+\DeclareDelimFormat[textcite]{nameyeardelim}{\addspace}%\addcomma\space
+\DeclareDelimFormat[cite,parencite]{nameyeardelim}{\gbpunctcommacite}%
+\DeclareDelimFormat[textcite]{andothersdelim}{\addspace}%
+\DeclareDelimFormat[cite,parencite]{andothersdelim}{\iffieldequalstr{userf}{chinese}{}{\addspace}}%
+\DeclareDelimFormat[cite,parencite,textcite]{bibpagespunct}{\gbpunctcoloncite}%
+
+
+
+%标注压缩时，直接用date+extradate代替extradate实现2006a，2006b的效果
+%\DeclareDelimFormat*{compcitedelim}{\gbpunctmarkcite}%\addcomma\addspace
+%\printfield{extradate}\printlabeldateextra\printfield{labelyear}\printfield{extradate}
+\newbibmacro*{cite:extradate}{%
+  \iffieldundef{extradate}
+    {}
+    {\printtext[bibhyperref]{\addspace\printlabeldateextra}}}%
+
+
+%添加前后空格
+\DeclareCiteCommand{\cite}%[\mkbibparens]
+  {\usebibmacro{cite:init}%
+   \unspace\printtext{\gbpunctparenlcite}\usebibmacro{prenote}%
+   \renewbibmacro*{postnote}{%
+      \iffieldundef{postnote}%
+        {}%
+        {\printdelim{bibpagespunct}\thefield{postnote}}}%
+   }%\addspace
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}%
+  \gbpunctparenrcite}%\addspace
+
+
+%添加前后空格
+\DeclareCiteCommand{\parencite}%[\mkbibparens]
+  {\usebibmacro{cite:init}%
+   \renewbibmacro*{postnote}{%
+      \iffieldundef{postnote}%
+        {}%
+        {\printdelim{bibpagespunct}\thefield{postnote}}}%
+   }%\addspace
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}%
+
+
+
+%重定义citeyear来得到不需要作者时的引用标注标签
+\DeclareCiteCommand{\citeyear}%[\mkbibparens]
+  {\usebibmacro{cite:init}%
+   \unspace\printtext{\gbpunctparenlcite}\usebibmacro{prenote}%
+   \renewbibmacro*{postnote}{%
+      \iffieldundef{postnote}%
+        {}%
+        {\printdelim{bibpagespunct}\thefield{postnote}}}%
+   }%\addspace
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:labeldate+extradate}}
+  {}
+  {\usebibmacro{postnote}%
+  \gbpunctparenrcite}%\addspace
+
+%原版
+%\DeclareCiteCommand{\cite}[\mkbibparens]
+%  {\usebibmacro{cite:init}%
+%   \usebibmacro{prenote}}%)
+%  {\usebibmacro{citeindex}%
+%   \usebibmacro{cite}}
+%  {}
+%  {\usebibmacro{postnote}}
+
+%
+%添加后面空格
+%\DeclareCiteCommand{\cbx@textcite}
+%  {\usebibmacro{cite:init}}
+%  {\usebibmacro{citeindex}%
+%   \usebibmacro{textcite}}
+%  {}
+%  {\usebibmacro{textcite:postnote}\addspace}
+
+
+%修改注释后的标点
+\renewcommand{\bibfootnotewrapper}[1]{%
+  #1}%\bibsentence
+
+%避免去除前面的空白
+\renewrobustcmd{\blx@mkbibfootnote}[2]{%
+  \iftoggle{blx@footnote}
+    {\blx@warning{Nested notes}%
+     \addspace\mkbibparens{#2}}
+    {%\unspace
+     \ifnum\blx@notetype=\tw@
+       \expandafter\@firstoftwo
+     \else
+       \expandafter\@secondoftwo
+     \fi
+       {\csuse{blx@theendnote#1}{\protecting{\blxmkbibnote{end}{#2}}}}
+       {\csuse{footnote#1}{\protecting{\blxmkbibnote{foot}{#2}}}}}}
+
+%修改脚注注释的实现
+\def\execgbfootbib%
+    {%
+    %开启引用跟踪计数器，为使用\ifciteseen等测试命令
+    \ExecuteBibliographyOptions{citetracker=true}
+
+    %
+    %重定义\footfullcite使完成css的脚注文献要求
+    \DeclareCiteCommand{\footfullcite}[\mkbibfootnote]%
+      {\defcounter{maxnames}{\blx@maxcitenames}%局部定义maxnames和minnames计数器
+       \defcounter{minnames}{\blx@mincitenames}%使footfullcite内的作者输出与正文文献表中的一致。
+       \usebibmacro{prenote}%
+        \renewbibmacro*{postnote}{%
+            \iffieldundef{postnote}%
+            {}{\setunit{\iffieldequalstr{userd}{chinese}{\unspace\gbpunctcomma}{\addcolon\addspace}}%
+            \printfield{postnote}}}%与ay样式不同，由于已修改postnote域格式，直接用printfield
+       }%
+      {\ifciteseen%
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{citeseen:\thefield{entrytype}}}%\nopunct
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{\thefield{entrytype}}}%
+      }%
+      {\multicitedelim}%
+      {\usebibmacro{postnote}\usebibmacro{finentry}}%
+
+
+    \DeclareCiteCommand{\fullcite}
+      {\usebibmacro{prenote}%
+        \renewbibmacro*{postnote}{%
+            \iffieldundef{postnote}%
+            {}{\setunit{\iffieldequalstr{userd}{chinese}{\unspace\gbpunctcomma}{\addcolon\addspace}}%
+            \printfield{postnote}}}%与ay样式不同，由于已修改postnote域格式，直接用printfield
+      }
+      {\ifciteseen%
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{citeseen:\thefield{entrytype}}}%\nopunct
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{\thefield{entrytype}}}%
+      }
+      {\multicitedelim}
+      {\usebibmacro{postnote}\usebibmacro{finentry}}%
+
+
+      \DeclareCiteCommand{\fullinnercite}
+      {\usebibmacro{prenote}%
+        \renewbibmacro*{postnote}{%
+            \iffieldundef{postnote}%
+            {}{\setunit{\iffieldequalstr{userd}{chinese}{\unspace\gbpunctcomma}{\addcolon\addspace}}%
+            \printfield{postnote}}}%与ay样式不同，由于已修改postnote域格式，直接用printfield
+      }
+      {\ifciteseen%
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{citeseen:\thefield{entrytype}}}%\nopunct
+          {\usedriver{\DeclareNameAlias{sortname}{default}}{\thefield{entrytype}}}%
+      }
+      {\multicitedelim}
+      {\usebibmacro{postnote}\usebibmacro{finentry}}%
+    }
+
+
+%为先秦文献夹注做处理
+\DeclareFieldFormat*{citejz}{%
+\iffieldequalstr{userd}{chinese}{\gbpunctprl\gbpunctttl#1\gbpunctttr\gbpunctprr}%
+{\mkbibemph{#1}}}
+\DeclareCiteCommand{\citejz}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexfield{indextitle}}
+     {}%
+   \printfield[citejz]{labeltitle}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+\DeclareFieldFormat{citetitle}{%
+\iffieldequalstr{userd}{chinese}{\gbpunctttl#1\gbpunctttr}%
+{\mkbibemph{#1}}%
+}
+
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {citetitle}{%
+  \iffieldequalstr{userd}{chinese}{\gbpunctttl#1\gbpunctttr}%
+  {\mkbibquote{#1\isdot}}%
+  }
+
+
+%为文献输出出版信息
+\DeclareCiteCommand{\citepub}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexfield{indextitle}}
+     {}%
+    \ifentrytype{online}{\usebibmacro{institution+location+date}}{\usebibmacro{publisher+location+date}}%
+   }
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+\newbibmacro*{textcite}{%
+  \iffieldequals{namehash}{\cbx@lasthash}
+    {\iffieldundef{shorthand}
+       {\ifthenelse{\iffieldequals{labelyear}{\cbx@lastyear}\AND
+                    \(\value{multicitecount}=0\OR\iffieldundef{postnote}\)}
+          {\setunit{\addcomma}%
+           \usebibmacro{cite:extradate}}
+          {\setunit{\compcitedelim}%
+           \usebibmacro{cite:labeldate+extradate}%
+           \savefield{labelyear}{\cbx@lastyear}}}
+       {\setunit{\compcitedelim}%
+        \usebibmacro{cite:shorthand}%
+        \global\undef\cbx@lastyear}}
+    {\ifnameundef{labelname}
+       {\iffieldundef{shorthand}
+          {\usebibmacro{cite:label}%
+           \setunit{%
+             \global\booltrue{cbx:parens}%
+             \printdelim{nonameyeardelim}\unspace\gbpunctparenlcite}%\bibopenparen
+           \ifnumequal{\value{citecount}}{1}
+             {\usebibmacro{prenote}}
+             {}%
+           \usebibmacro{cite:labeldate+extradate}}
+          {\usebibmacro{cite:shorthand}}}
+       {\printnames{labelname}%
+        \setunit{%
+          \global\booltrue{cbx:parens}%
+          \printdelim{nameyeardelim}\unspace\gbpunctparenlcite}%\bibopenparen
+        \ifnumequal{\value{citecount}}{1}
+          {\usebibmacro{prenote}}
+          {}%
+        \iffieldundef{shorthand}
+          {\iffieldundef{labelyear}
+             {\usebibmacro{cite:label}}
+             {\usebibmacro{cite:labeldate+extradate}}%
+           \savefield{labelyear}{\cbx@lastyear}}
+          {\usebibmacro{cite:shorthand}%
+           \global\undef\cbx@lastyear}}%
+     \stepcounter{textcitecount}%
+     \savefield{namehash}{\cbx@lasthash}}%
+  \setunit{%
+    \ifbool{cbx:parens}
+      {\gbpunctparenrcite\global\boolfalse{cbx:parens}}%\bibcloseparen
+      {}%
+    \textcitedelim}}
+
+\newbibmacro*{textcite:postnote}{%
+  \usebibmacro{postnote}%
+  \ifthenelse{\value{multicitecount}=\value{multicitetotal}}
+    {\setunit{}%
+     \printtext{%
+       \ifbool{cbx:parens}
+         {\gbpunctparenrcite\global\boolfalse{cbx:parens}}%\bibcloseparen
+         {}}}
+    {\setunit{%
+       \ifbool{cbx:parens}
+         {\gbpunctparenrcite\global\boolfalse{cbx:parens}}%\bibcloseparen
+         {}%
+       \textcitedelim}}}
+
+\let\citet=\parencite
+\let\citep=\cite
+\DeclareMultiCiteCommand{\cites}{\cite}{\multicitedelim}
+\DeclareMultiCiteCommand{\parencites}{\parencite}{\multicitedelim}
+\let\citets=\parencites

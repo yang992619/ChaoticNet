@@ -1,0 +1,4 @@
+model,horizon_s,rms_err_deg,mse_th1_rad2,mse_th2_rad2
+ESN,0.308,52.66,0.2404,0.6043
+PINN,0.283,10.31,0.0132,0.0192
+Hybrid,0.283,11.5,0.0147,0.0256

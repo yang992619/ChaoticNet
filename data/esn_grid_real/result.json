@@ -1,0 +1,33 @@
+{
+  "elapsed_min": 367.613824848334,
+  "n_configs": 147,
+  "leads_main": [
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+  ],
+  "leads_fine": [
+    2.0,
+    3.0,
+    4.0,
+    6.0,
+    8.0,
+    11.0,
+    16.0,
+    22.0,
+    32.0,
+    45.0,
+    64.0
+  ],
+  "n_clips": 29,
+  "pred_s": 4.0,
+  "stage1_cells": 858,
+  "stage2_cells": 0,
+  "stage3_cells": 0,
+  "notes": [
+    "Stage1 因墙钟预算被截断，leaderboard 可能不完整。"
+  ]
+}

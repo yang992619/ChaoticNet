@@ -1,0 +1,190 @@
+{
+  "hsv_params": {
+    "blue_hmin": 90,
+    "blue_hmax": 140,
+    "blue_smin": 55,
+    "blue_vmin": 40,
+    "gate_xmax": 1780
+  },
+  "samples_per_segment": 120,
+  "n_segments": 29,
+  "per_segment": {
+    "1430": {
+      "median": 37.0,
+      "max": 63,
+      "window_frames": 11845,
+      "sampled": 120
+    },
+    "1431": {
+      "median": 27.0,
+      "max": 36,
+      "window_frames": 11515,
+      "sampled": 120
+    },
+    "1432": {
+      "median": 49.0,
+      "max": 86,
+      "window_frames": 12475,
+      "sampled": 120
+    },
+    "1434": {
+      "median": 34.0,
+      "max": 44,
+      "window_frames": 19732,
+      "sampled": 120
+    },
+    "1435": {
+      "median": 53.0,
+      "max": 72,
+      "window_frames": 16973,
+      "sampled": 120
+    },
+    "1436": {
+      "median": 35.0,
+      "max": 45,
+      "window_frames": 9716,
+      "sampled": 120
+    },
+    "1437": {
+      "median": 33.0,
+      "max": 43,
+      "window_frames": 15054,
+      "sampled": 120
+    },
+    "1438": {
+      "median": 38.0,
+      "max": 47,
+      "window_frames": 11515,
+      "sampled": 120
+    },
+    "1439": {
+      "median": 39.0,
+      "max": 53,
+      "window_frames": 17813,
+      "sampled": 120
+    },
+    "1440": {
+      "median": 65.0,
+      "max": 87,
+      "window_frames": 11035,
+      "sampled": 120
+    },
+    "1441": {
+      "median": 50.5,
+      "max": 76,
+      "window_frames": 22071,
+      "sampled": 120
+    },
+    "1442": {
+      "median": 46.0,
+      "max": 61,
+      "window_frames": 17511,
+      "sampled": 120
+    },
+    "1443": {
+      "median": 41.0,
+      "max": 51,
+      "window_frames": 16733,
+      "sampled": 120
+    },
+    "1444": {
+      "median": 38.0,
+      "max": 46,
+      "window_frames": 12535,
+      "sampled": 120
+    },
+    "1445": {
+      "median": 40.0,
+      "max": 47,
+      "window_frames": 17933,
+      "sampled": 120
+    },
+    "1446": {
+      "median": 37.0,
+      "max": 51,
+      "window_frames": 16193,
+      "sampled": 120
+    },
+    "1447": {
+      "median": 41.0,
+      "max": 52,
+      "window_frames": 18818,
+      "sampled": 120
+    },
+    "1448": {
+      "median": 46.0,
+      "max": 60,
+      "window_frames": 13153,
+      "sampled": 120
+    },
+    "1449": {
+      "median": 42.0,
+      "max": 56,
+      "window_frames": 12699,
+      "sampled": 120
+    },
+    "1450": {
+      "median": 40.0,
+      "max": 50,
+      "window_frames": 12485,
+      "sampled": 120
+    },
+    "1451": {
+      "median": 47.0,
+      "max": 59,
+      "window_frames": 9765,
+      "sampled": 120
+    },
+    "1452": {
+      "median": 58.5,
+      "max": 91,
+      "window_frames": 11346,
+      "sampled": 120
+    },
+    "1453": {
+      "median": 76.0,
+      "max": 94,
+      "window_frames": 14425,
+      "sampled": 120
+    },
+    "1454": {
+      "median": 29.0,
+      "max": 39,
+      "window_frames": 18445,
+      "sampled": 120
+    },
+    "1455": {
+      "median": 43.5,
+      "max": 60,
+      "window_frames": 12620,
+      "sampled": 120
+    },
+    "1456": {
+      "median": 41.0,
+      "max": 54,
+      "window_frames": 12759,
+      "sampled": 120
+    },
+    "1458": {
+      "median": 42.0,
+      "max": 53,
+      "window_frames": 10939,
+      "sampled": 120
+    },
+    "1459": {
+      "median": 36.0,
+      "max": 47,
+      "window_frames": 11400,
+      "sampled": 120
+    },
+    "1460": {
+      "median": 35.0,
+      "max": 49,
+      "window_frames": 12243,
+      "sampled": 120
+    }
+  },
+  "median_of_segment_medians": 41.0,
+  "min_segment_median": 27.0,
+  "max_segment_median": 76.0
+}

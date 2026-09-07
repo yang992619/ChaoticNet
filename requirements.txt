@@ -1,0 +1,16 @@
+# 混沌之眼 / ChaoticNet 运行依赖
+# Python 3.14（开发环境）。安装：pip install -r requirements.txt
+# 版本为当前开发机实测可用版本，如遇安装冲突可放宽为 >=。
+
+numpy==2.4.4
+scipy==1.17.1
+pandas==3.0.3
+matplotlib==3.10.9
+torch==2.11.0            # PINN / Hybrid 神经网络
+opencv-python==4.13.0.92 # cv2：视觉追踪 / 相机标定 / 验收
+Pillow==12.2.0           # PIL：实拍叠加视频中文面板 / PPT 预览渲染
+python-pptx==1.0.2       # tools 里生成/读写 pptx
+# playwright（可选）：仅个别 svg→png 截图渲染工具用，核心复现不需要
+
+# 说明：sim/ rc/ tools/ tracking/ 之间互相 import（baseline、esn、pinn、
+# hybrid、fit_damping 等）均为项目内部模块，非第三方包，无需安装。

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" width="1100" height="760" font-family="'Helvetica Neue', 'Songti SC', sans-serif">
+  <!--
+    框架装配图（正视图）+ 顶横梁局部详图
+    用于论文第 3 章 装置框架 + 给采购参考
+    比例：装配 1:1.6  |  详图 1:1
+    单位：mm
+  -->
+
+  <defs>
+    <marker id="dim5" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#111"/>
+    </marker>
+    <pattern id="alupat5" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#cfd6dc"/>
+      <path d="M 0 6 L 6 0" stroke="#9aa5af" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1060" height="720" fill="none" stroke="#222" stroke-width="1.6"/>
+  <rect x="20" y="20" width="1060" height="40" fill="#f0f0f0" stroke="#222" stroke-width="1.6"/>
+  <text x="40" y="48" font-size="20" font-weight="bold" fill="#111">F01 · 主框架装配图（2020 铝型材结构）</text>
+  <text x="900" y="44" font-size="11" text-anchor="end" fill="#444">单位 mm · 比例 1:1.6 · GB/T 1804-m</text>
+  <text x="900" y="56" font-size="11" text-anchor="end" fill="#444">ChaoticNet / 双摆混沌项目</text>
+
+  <!-- ============================ 装配图主体（左半，正视图） ============================
+       比例 1.25 px = 1 mm → 框架 500×600mm = 625×750 px... 太大了。改用 0.65 px = 1mm
+       框架 500×600 → 325 × 390 px
+       位置 x 100..425, y 95..485
+  -->
+  <text x="100" y="85" font-size="14" font-weight="bold" fill="#111">装配图  Assembly View（1:1.6）</text>
+  <line x1="40" y1="92" x2="450" y2="92" stroke="#999" stroke-width="0.6"/>
+
+  <!-- 4 段 2020 铝型材：型材宽 20mm × 0.65 = 13 px -->
+  <!-- 左立柱：x=100..113，y=95..485 → 长 600mm（390 px） -->
+  <rect x="100" y="95" width="13" height="390" fill="url(#alupat5)" stroke="#333" stroke-width="1.2"/>
+  <text x="84" y="298" font-size="11" font-weight="bold" fill="#111" transform="rotate(-90 84 298)">立柱-L</text>
+
+  <!-- 右立柱 -->
+  <rect x="412" y="95" width="13" height="390" fill="url(#alupat5)" stroke="#333" stroke-width="1.2"/>
+  <text x="445" y="298" font-size="11" font-weight="bold" fill="#111" transform="rotate(90 445 298)">立柱-R</text>
+
+  <!-- 上横梁：x=100..425（325 px = 500mm），y=95..108 -->
+  <rect x="100" y="95" width="325" height="13" fill="url(#alupat5)" stroke="#333" stroke-width="1.2"/>
+  <text x="262" y="85" font-size="11" font-weight="bold" text-anchor="middle" fill="#111">上横梁</text>
+
+  <!-- 下横梁（底座） -->
+  <rect x="100" y="472" width="325" height="13" fill="url(#alupat5)" stroke="#333" stroke-width="1.2"/>
+  <text x="262" y="503" font-size="11" font-weight="bold" text-anchor="middle" fill="#111">底座横梁</text>
+
+  <!-- 4 个角连接件（L 形角件，黑色实心方块表示） -->
+  <rect x="95" y="92" width="22" height="22" fill="#222"/>
+  <rect x="408" y="92" width="22" height="22" fill="#222"/>
+  <rect x="95" y="467" width="22" height="22" fill="#222"/>
+  <rect x="408" y="467" width="22" height="22" fill="#222"/>
+
+  <!-- 主轴座 P04 + 摆臂示意 -->
+  <!-- 主轴座装在上横梁的下方中央，位置 x≈262 -->
+  <rect x="244" y="108" width="40" height="26" fill="#aec0d0" stroke="#222" stroke-width="1.4" rx="4"/>
+  <text x="264" y="125" font-size="10" font-weight="bold" text-anchor="middle" fill="#111">P04</text>
+
+  <!-- 主轴销 -->
+  <circle cx="262" cy="134" r="3" fill="#fff" stroke="#111" stroke-width="1.4"/>
+
+  <!-- 摆 1 + 摆 2 + 配重盘示意（向下悬挂） -->
+  <rect x="259" y="134" width="6" height="160" fill="#e8eaec" stroke="#111" stroke-width="1"/>
+  <circle cx="262" cy="294" r="2.5" fill="#fff" stroke="#111" stroke-width="1"/>
+  <rect x="259" y="294" width="6" height="125" fill="#e8eaec" stroke="#111" stroke-width="1"/>
+  <circle cx="262" cy="430" r="8" fill="#c9a449" stroke="#7a6028" stroke-width="1"/>
+
+  <!-- 黑色背板（贴在后立柱之间，俯视图看是平面） -->
+  <text x="262" y="463" font-size="9" text-anchor="middle" fill="#666">↑ 黑亚克力背板贴在立柱后侧</text>
+
+  <!-- 底座支撑脚 -->
+  <rect x="125" y="485" width="50" height="15" fill="#444"/>
+  <rect x="350" y="485" width="50" height="15" fill="#444"/>
+
+  <!-- 桌面参考线 -->
+  <line x1="50" y1="510" x2="475" y2="510" stroke="#999" stroke-width="2" stroke-dasharray="8,3"/>
+  <text x="55" y="525" font-size="10" fill="#999">桌面</text>
+
+  <!-- ============================ 装配图尺寸标注 ============================ -->
+  <!-- 总宽 500 -->
+  <line x1="100" y1="555" x2="425" y2="555" stroke="#111" stroke-width="1.2" marker-start="url(#dim5)" marker-end="url(#dim5)"/>
+  <line x1="100" y1="500" x2="100" y2="565" stroke="#111" stroke-width="0.6"/>
+  <line x1="425" y1="500" x2="425" y2="565" stroke="#111" stroke-width="0.6"/>
+  <text x="262" y="550" font-size="15" font-weight="bold" text-anchor="middle" fill="#111">500 ±1</text>
+
+  <!-- 总高 600 -->
+  <line x1="58" y1="95" x2="58" y2="485" stroke="#111" stroke-width="1.2" marker-start="url(#dim5)" marker-end="url(#dim5)"/>
+  <line x1="50" y1="95" x2="100" y2="95" stroke="#111" stroke-width="0.6"/>
+  <line x1="50" y1="485" x2="100" y2="485" stroke="#111" stroke-width="0.6"/>
+  <text x="50" y="290" font-size="14" font-weight="bold" text-anchor="end" fill="#111">600 ±1</text>
+
+  <!-- ============================ 顶横梁局部详图（右半） ============================ -->
+  <text x="540" y="85" font-size="14" font-weight="bold" fill="#111">顶横梁局部详图  Top Crossbar Detail（1:1）</text>
+  <line x1="500" y1="92" x2="900" y2="92" stroke="#999" stroke-width="0.6"/>
+
+  <!-- 顶横梁正视图，1:1 比例 → 500mm 显示为 500 px 太宽，截取中段 200mm 显示 -->
+  <!-- 显示中段 200mm 即 200 px，位置 x=560..760, y=125..145 -->
+  <rect x="560" y="125" width="200" height="20" fill="url(#alupat5)" stroke="#333" stroke-width="1.2"/>
+
+  <!-- 主轴座 P04 安装位（在中段下方） -->
+  <rect x="630" y="145" width="60" height="40" fill="#aec0d0" stroke="#111" stroke-width="1.4" rx="4"/>
+  <text x="660" y="170" font-size="11" font-weight="bold" text-anchor="middle" fill="#111">P04</text>
+
+  <!-- 2 个 M5 安装孔 -->
+  <circle cx="645" cy="155" r="3" fill="#fff" stroke="#222" stroke-width="1"/>
+  <circle cx="675" cy="155" r="3" fill="#fff" stroke="#222" stroke-width="1"/>
+
+  <!-- 主轴销 -->
+  <circle cx="660" cy="180" r="3" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="685" y="184" font-size="11" fill="#c0392b" font-weight="bold">枢轴 O</text>
+  <line x1="540" y1="180" x2="635" y2="180" stroke="#c0392b" stroke-width="0.6" stroke-dasharray="6,3"/>
+
+  <!-- 主轴座中心位置标注（距左立柱 250mm = 整体中心） -->
+  <line x1="560" y1="225" x2="660" y2="225" stroke="#111" stroke-width="1" marker-start="url(#dim5)" marker-end="url(#dim5)"/>
+  <line x1="560" y1="125" x2="560" y2="230" stroke="#111" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="660" y1="185" x2="660" y2="230" stroke="#111" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <text x="610" y="220" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">200</text>
+  <text x="610" y="244" font-size="10" text-anchor="middle" fill="#666">（自上横梁中段起算）</text>
+
+  <!-- 横梁高度标注 -->
+  <line x1="775" y1="125" x2="775" y2="145" stroke="#111" stroke-width="1" marker-start="url(#dim5)" marker-end="url(#dim5)"/>
+  <line x1="760" y1="125" x2="780" y2="125" stroke="#111" stroke-width="0.6"/>
+  <line x1="760" y1="145" x2="780" y2="145" stroke="#111" stroke-width="0.6"/>
+  <text x="790" y="138" font-size="12" font-weight="bold" fill="#111">20</text>
+
+  <!-- T 槽示意（横梁前面正中开槽） -->
+  <line x1="560" y1="135" x2="760" y2="135" stroke="#c0392b" stroke-width="2" stroke-dasharray="8,2"/>
+  <text x="560" y="115" font-size="10" fill="#c0392b">2020 标准 T 槽（4 面都有）</text>
+
+  <!-- 横梁全长说明 -->
+  <text x="560" y="100" font-size="11" fill="#666">（横梁实长 500mm，本图只画中段 200mm）</text>
+
+  <!-- ============================ BOM 表格 ============================ -->
+  <rect x="500" y="280" width="560" height="200" fill="#fff" stroke="#666" stroke-width="1.2" rx="3"/>
+  <rect x="500" y="280" width="560" height="26" fill="#dfe5ea" stroke="#666" stroke-width="1.2"/>
+  <text x="514" y="299" font-size="14" font-weight="bold" fill="#111">框架 BOM  Frame Bill of Materials</text>
+
+  <!-- 表头 -->
+  <line x1="500" y1="320" x2="1060" y2="320" stroke="#999" stroke-width="0.6"/>
+  <text x="514" y="318" font-size="11" font-weight="bold" fill="#222">#</text>
+  <text x="544" y="318" font-size="11" font-weight="bold" fill="#222">名称</text>
+  <text x="700" y="318" font-size="11" font-weight="bold" fill="#222">规格</text>
+  <text x="880" y="318" font-size="11" font-weight="bold" fill="#222">数量</text>
+  <text x="940" y="318" font-size="11" font-weight="bold" fill="#222">采购</text>
+
+  <!-- 数据行 -->
+  <text x="514" y="340" font-size="11" fill="#333">1</text>
+  <text x="544" y="340" font-size="11" fill="#333">2020 工业铝型材（立柱）</text>
+  <text x="700" y="340" font-size="11" fill="#333">2020-T6，长 600mm，切口 90°</text>
+  <text x="880" y="340" font-size="11" fill="#333">2 段</text>
+  <text x="940" y="340" font-size="10" fill="#666">外购</text>
+
+  <text x="514" y="360" font-size="11" fill="#333">2</text>
+  <text x="544" y="360" font-size="11" fill="#333">2020 工业铝型材（横梁）</text>
+  <text x="700" y="360" font-size="11" fill="#333">2020-T6，长 500mm，切口 90°</text>
+  <text x="880" y="360" font-size="11" fill="#333">2 段</text>
+  <text x="940" y="360" font-size="10" fill="#666">外购</text>
+
+  <text x="514" y="380" font-size="11" fill="#333">3</text>
+  <text x="544" y="380" font-size="11" fill="#333">2020 内置 L 形角件</text>
+  <text x="700" y="380" font-size="11" fill="#333">配 M5 T 螺母 + M5×10 螺栓</text>
+  <text x="880" y="380" font-size="11" fill="#333">4 套</text>
+  <text x="940" y="380" font-size="10" fill="#666">外购</text>
+
+  <text x="514" y="400" font-size="11" fill="#333">4</text>
+  <text x="544" y="400" font-size="11" fill="#333" font-weight="bold">P04 主轴座</text>
+  <text x="700" y="400" font-size="11" fill="#333">见 parts/P04_pivot_bracket.svg</text>
+  <text x="880" y="400" font-size="11" fill="#333">1 件</text>
+  <text x="940" y="400" font-size="10" fill="#c0392b" font-weight="bold">定做</text>
+
+  <text x="514" y="420" font-size="11" fill="#333">5</text>
+  <text x="544" y="420" font-size="11" fill="#333">主轴座固定螺栓</text>
+  <text x="700" y="420" font-size="11" fill="#333">M5×10 内六角 + T 螺母</text>
+  <text x="880" y="420" font-size="11" fill="#333">2 套</text>
+  <text x="940" y="420" font-size="10" fill="#666">外购</text>
+
+  <text x="514" y="440" font-size="11" fill="#333">6</text>
+  <text x="544" y="440" font-size="11" fill="#333">底座支撑脚（防滑橡胶垫）</text>
+  <text x="700" y="440" font-size="11" fill="#333">⌀50 × 厚 10mm，自粘</text>
+  <text x="880" y="440" font-size="11" fill="#333">2 个</text>
+  <text x="940" y="440" font-size="10" fill="#666">外购</text>
+
+  <text x="514" y="460" font-size="11" fill="#333">7</text>
+  <text x="544" y="460" font-size="11" fill="#333">黑亚克力背板（视觉用）</text>
+  <text x="700" y="460" font-size="11" fill="#333">350 × 500 × 3mm 哑光黑</text>
+  <text x="880" y="460" font-size="11" fill="#333">1 块</text>
+  <text x="940" y="460" font-size="10" fill="#c0392b">定切</text>
+
+  <!-- ============================ 装配工艺顺序 ============================ -->
+  <rect x="500" y="510" width="560" height="220" fill="#fff8e6" stroke="#d9a441" stroke-width="1.2" rx="4"/>
+  <text x="514" y="532" font-size="13" font-weight="bold" fill="#7a5b15">装配顺序（推荐流程）</text>
+
+  <text x="514" y="555" font-size="11" font-weight="bold" fill="#222">①</text>
+  <text x="534" y="555" font-size="11" fill="#333">用 4 个 L 角件把 2 立柱 + 2 横梁组成回字形外框，不上紧</text>
+
+  <text x="514" y="575" font-size="11" font-weight="bold" fill="#222">②</text>
+  <text x="534" y="575" font-size="11" fill="#333">放水平尺上调四角直角（量角线），逐个锁紧 M5 螺栓</text>
+
+  <text x="514" y="595" font-size="11" font-weight="bold" fill="#222">③</text>
+  <text x="534" y="595" font-size="11" fill="#333">2 颗 T 螺母塞入上横梁中段 T 槽，间距 30mm，先不锁</text>
+
+  <text x="514" y="615" font-size="11" font-weight="bold" fill="#222">④</text>
+  <text x="534" y="615" font-size="11" fill="#333">P04 主轴座对齐 T 螺母，M5 螺栓穿过 P04 上 M1/M2 孔锁紧</text>
+
+  <text x="514" y="635" font-size="11" font-weight="bold" fill="#222">⑤</text>
+  <text x="534" y="635" font-size="11" fill="#333">⌀5 圆柱销（P06）压入 P04 ⌀5 H7 孔，留出 10mm 外伸（v2: 销总长 15mm）</text>
+
+  <text x="514" y="655" font-size="11" font-weight="bold" fill="#222">⑥</text>
+  <text x="534" y="655" font-size="11" fill="#333">摆臂 1（P01）轴承推入轴销，E 型挡圈卡住</text>
+
+  <text x="514" y="675" font-size="11" font-weight="bold" fill="#222">⑦</text>
+  <text x="534" y="675" font-size="11" fill="#333">关节销（P05）压入 P02 顶端，P01 下端轴承穿入；E 挡圈固定</text>
+
+  <text x="514" y="695" font-size="11" font-weight="bold" fill="#222">⑧</text>
+  <text x="534" y="695" font-size="11" fill="#333">P03 45# 钢配重 M3 螺栓拧到 P02 末端；黑亚克力背板贴框架后</text>
+
+  <text x="514" y="717" font-size="10" font-style="italic" fill="#7a5b15">最后做 τ 测试：单摆 30° 释放，目标衰减时间常数 ≥ 30s（详 轴承.md § 6）</text>
+</svg>

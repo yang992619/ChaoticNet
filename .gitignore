@@ -1,0 +1,108 @@
+# ---------------- Python ----------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---------------- macOS ----------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ---------------- LaTeX 编译产物 ----------------
+paper/*.aux
+paper/*.bbl
+paper/*.bcf
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.run.xml
+paper/*.toc
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+# main.pdf 不忽略，作为可分发的论文成品 commit 进仓库
+
+# ---------------- 视频与大数据（外部归档/可重生，不入库）----------------
+# 实测源视频 13G（31 个 MOV），已外部归档于 实测视频/源视频归档/，不入库；可向作者索取
+# 拿到源视频后重建 29 段逐帧追踪：tracking/reproduce_29.sh
+实测视频/
+# 合成动画 mp4 按需重生，不入库
+*.mp4
+# 答辩 deck 嵌视频演示版（15M，由 embed_demo_into_pptx.py 从基础 pptx + 叠加 mp4 重生）
+混沌之眼_答辩PPT_瑞士极简_含实拍演示.pptx
+# 逐帧追踪 dump（245M，可由源视频重跑 tracking 还原）
+data/tracking/
+# data/sim 的分布质量镜像，与 data/sim 逐字节相同，冗余不入库
+data/sim_distmass/
+# 历史快照备份（点质量期，含 sim CSV/图/动画，29M），不入库
+data/_pointmass_canonical_backup_*/
+# 同一备份后来移入 archived/，规则一并覆盖新路径，避免 29M 误入库
+archived/_pointmass_canonical_backup_*/
+# 注：data/*_pointmass_bak_20260621/（消融点质量底档，~160K）入库，论文脚注引为备查
+
+# ---------------- Node 依赖 ----------------
+node_modules/
+
+# ---------------- 生成物（由 md 源 / pptx 导出，可重生）----------------
+*.docx
+
+# ---------------- 模型权重 ----------------
+# model.pt 可以 commit（每个 < 10MB），新队员直接 load 不必重训
+# 如果觉得权重太大，取消下一行注释
+# *.pt
+
+# ---------------- 调试输出 ----------------
+data/tracking/debug_frames/
+.vscode/
+.idea/
+
+# ---------------- 备份 ----------------
+# git bundle 备份（备份的就是本仓库自身，不能再入库造成递归膨胀）
+archived/git备份/
+
+# ---------------- 临时 ----------------
+*.swp
+*.swo
+*~
+.cache/
+*.tmp
+
+# ── 2026-09-08 补：派生/临时工作目录，不进版本库 ──
+# PPT 制作过程中的中间工作目录（每个数十 MB，产物是桌面上的 pptx）
+.ppt_workflow_qc/
+ppt_edit_*/
+ppt_slide13_*/
+ppt_projection_*/
+ppt_allfigs_*/
+video_restore_*/
+# 论文格式转换与质检产物（316MB，可由 paper/ 源文件重生成）
+paper/_convert/
+paper/_qc_report_final/
+paper/_vendor_gbt/
+paper/_qc_text.txt
+# A3 海报工作目录（99MB，成品在桌面）
+poster/
+# 与本项目无关的其他 PPT 工程
+projects/
+# 临时产物
+tmp/
+# 仿真 200 组扫描原始数据（78MB，可由 sim/ 脚本重跑生成）
+data/sim200/
+# PPT 二进制成品与其解包/检查产物（成品在桌面，体积大且可重生）
+*.pptx
+*.pptx.inspect.ndjson
+张调整-*/
+混沌之眼_A3海报_*/
+混沌之眼_答辩PPT_*/
+poster_a3_*/
+poster_template_compare_*/
+ppt素材/
+回收站/
